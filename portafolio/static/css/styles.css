@@ -1,27 +1,49 @@
+/* Estilos base */
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
+    min-height: 100vh;
     margin: 0;
     background: linear-gradient(to right, #2e2d2d, #0f0f0f);
     color: #fff;
+    overflow-x: hidden;
 }
 
-.container {
-    text-align: center;
-    padding: 16px;
-   
+/* Container principal */
+.container-fluid {
+    padding: 0;
 }
 
+.sections-container {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Añadido para centrar */
+    gap: 2rem; /* Espaciado uniforme entre secciones */
+}
+
+/* Contenedores de sección */
+.profile-section {
+    flex: 0 1 400px; /* Ancho fijo para la sección de perfil */
+    z-index: 2; /* Asegura que el perfil esté siempre por encima */
+}
+
+.side-section {
+    flex: 0 1 350px; /* Ancho fijo para las secciones laterales */
+    opacity: 0;
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Estilos para la tarjeta de perfil */
 .profile-card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 32px;
+    padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     text-align: center;
+    height: 100%;
+    margin: 0 auto; /* Centrado horizontal */
 }
 
 .profile-picture {
@@ -40,7 +62,6 @@ body {
     background-clip: text;
     color: transparent;
     margin: 8px 0;
-    animation: blink 1s steps(1) infinite;
 }
 
 .job-title {
@@ -48,6 +69,7 @@ body {
     margin: 8px 0;
 }
 
+/* Estilos para botones */
 .buttons {
     margin: 16px 0;
 }
@@ -60,7 +82,7 @@ body {
     font-weight: bold;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
-    margin: 0 8px;
+    margin: 6px 1px;
 }
 
 .button:hover {
@@ -82,7 +104,7 @@ body {
     color: #353232;
 }
 
-/* Stack Tecnológico */
+/* Estilos para Stack Tecnológico */
 .stack-cards {
     display: flex;
     flex-wrap: wrap;
@@ -136,3 +158,119 @@ body {
     color: #ffe082;
 }
 
+/* Stack section */
+#stackSection {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Estilos para sección Acerca de mi */
+.about-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.about-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-photo {
+    flex: 1;
+    text-align: center;
+}
+
+.about-photo img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+    border: 3px solid #fff;
+}
+
+/* Animaciones */
+.section-enter {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .sections-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+
+    .profile-section {
+        flex: 0 1 auto;
+        width: 100%;
+        max-width: 400px; /* Mantiene un ancho máximo en móvil */
+    }
+
+    .side-section {
+        flex: 0 1 auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .about-section, #stackSection {
+        margin: 1rem 0;
+    }
+
+    .profile-card {
+        margin: 1rem 0;
+    }
+    
+    .stack-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-photo {
+        margin-top: 1rem;
+    }
+    
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .button {
+        width: 100%;
+        margin: 0;
+    }
+}

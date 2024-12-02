@@ -1,39 +1,63 @@
-document.getElementById('clickHere').addEventListener('click', () => {
-    gsap.to('#clickHere', {
-        rotation: 360,
-        scale: 1.2,
-        duration: 0.5,
-        onComplete: () => {
-            alert('¡Bienvenido a mi portafolio!');
+// Función para manejar las animaciones de las secciones
+const handleSectionToggle = (sectionId, displayStyle = 'flex') => {
+    const section = document.getElementById(sectionId);
+    const isHidden = section.style.display === 'none' || section.style.opacity === '0';
+
+    if (isHidden) {
+        // Mostrar sección
+        section.style.display = displayStyle;
+        section.classList.add('section-enter');
+        setTimeout(() => {
+            section.style.opacity = '1';
+        }, 50);
+    } else {
+        // Ocultar sección
+        section.style.opacity = '0';
+        setTimeout(() => {
+            section.style.display = 'none';
+            section.classList.remove('section-enter');
+        }, 500);
+    }
+};
+
+// Inicializar los event listeners cuando el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+    // Botón "Acerca de"
+    const aboutButton = document.getElementById('clickHere');
+    if (aboutButton) {
+        aboutButton.addEventListener('click', () => {
+            handleSectionToggle('aboutSection', 'flex');
+        });
+    }
+
+    // Botón "Stack Tecnológico"
+    const stackButton = document.getElementById('skillsBtn');
+    if (stackButton) {
+        stackButton.addEventListener('click', () => {
+            handleSectionToggle('stackSection', 'block');
+        });
+    }
+
+    // Inicializar estado de las secciones
+    const sections = ['aboutSection', 'stackSection'];
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.style.display = 'none';
+            section.style.opacity = '0';
         }
     });
 });
 
-
-//Efectos para las tarjetas de stack tecnológico
-document.addEventListener('DOMContentLoaded', () => {
-    const skillsBtn = document.getElementById('skillsBtn');
-    const stackSection = document.getElementById('stackSection');
-    let isVisible = false;
-
-    // Alternar visibilidad
-    skillsBtn.addEventListener('click', () => {
-        isVisible = !isVisible;
-
-        if (isVisible) {
-            // Mostrar con animación
-            stackSection.style.display = 'block';
-            setTimeout(() => {
-                stackSection.style.opacity = 1;
-                stackSection.style.transition = 'opacity 0.5s ease-in-out';
-            }, 50);
-        } else {
-            // Ocultar con animación
-            stackSection.style.opacity = 0;
-            stackSection.style.transition = 'opacity 0.5s ease-in-out';
-            setTimeout(() => {
-                stackSection.style.display = 'none';
-            }, 500);
+// Manejar cambios de tamaño de ventana para responsividad
+window.addEventListener('resize', () => {
+    const sections = ['aboutSection', 'stackSection'];
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section && section.style.opacity === '1') {
+            // Ajustar display style basado en el tamaño de la ventana
+            const displayStyle = sectionId === 'stackSection' ? 'block' : 'flex';
+            section.style.display = displayStyle;
         }
     });
 });
