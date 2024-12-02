@@ -16,13 +16,15 @@
             <p class="job-title">Ingeniero en Bioinformática | Desarrollador Web Full Stack</p>
             
             <div class="buttons">
-                <div id="clickHere" class="button black">Click Here</div>
+                <div id="clickHere" class="button black">Acerca de</div>
                 <a href="#" class="button green">Proyectos</a>
                 <a href="#stackSection" class="button white" id="skillsBtn">Stack Tecnológico</a>
             </div>
         </div><br>
 
-        <!-- Stack Tecnológico -->
+        
+
+<!-- Stack Tecnológico -->
 <div class="container profile-card" id="stackSection" style="display: none; opacity: 0;">
     <h3 class="text-center name mb-4 text-gradient">Stack Tecnológico</h3>
     <div class="stack-cards">
@@ -45,7 +47,7 @@
                     {% for item in stack.desarrollo_software %}
                     <li>{{ item }}</li>
                     {% endfor %}
-                </ul>
+                </ul><br>
             </div>
         </div>
 
@@ -67,7 +69,7 @@
                     {% for item in stack.otros %}
                     <li>{{ item }}</li>
                     {% endfor %}
-                </ul>
+                </ul><br>
             </div>
         </div>
         {% endfor %}

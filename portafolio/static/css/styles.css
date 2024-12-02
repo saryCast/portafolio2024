@@ -33,9 +33,9 @@ body {
 }
 
 .name {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    background: linear-gradient(to right, #fccc64, #502f05);
+    background: linear-gradient(to right, #fcecb7, #947612);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -44,7 +44,7 @@ body {
 }
 
 .job-title {
-    font-size: 1.0rem;
+    font-size: 0.9rem;
     margin: 8px 0;
 }
 
@@ -92,28 +92,28 @@ body {
 
 .stack-category {
     flex: 1 1 calc(50% - 20px);
-    margin: 10px;
+    margin: 5px;
     text-align: center;
 }
 
 .stack-card {
-    padding: 20px;
-    background: linear-gradient(135deg, #4caf50, #1b5e20);
+    padding: 5px;
+    background: linear-gradient(135deg, #040704, #0a0a0a);
     border-radius: 15px;
-    color: #fff;
+    color: #f8f6f6;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stack-card:hover {
     transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 8px 20px rgba(252, 251, 251, 0.5);
 }
 
 .category-title {
     margin-bottom: 15px;
     font-size: 0.9rem;
-    background: linear-gradient(to right, #fccc64, #ff6b6b);
+    background: linear-gradient(to right, #2df867, #8a8787);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -127,7 +127,7 @@ body {
 
 .stack-list li {
     margin: 5px 0;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     transition: color 0.2s ease;
 }
@@ -135,3 +135,4 @@ body {
 .stack-list li:hover {
     color: #ffe082;
 }
+
