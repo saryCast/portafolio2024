@@ -14,18 +14,26 @@ document.getElementById('clickHere').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const skillsBtn = document.getElementById('skillsBtn');
     const stackSection = document.getElementById('stackSection');
+    let isVisible = false;
 
-    skillsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+    // Alternar visibilidad
+    skillsBtn.addEventListener('click', () => {
+        isVisible = !isVisible;
 
-        // Mostrar la sección con animación
-        stackSection.style.display = 'block';
-        setTimeout(() => {
-            stackSection.style.opacity = 1;
+        if (isVisible) {
+            // Mostrar con animación
+            stackSection.style.display = 'block';
+            setTimeout(() => {
+                stackSection.style.opacity = 1;
+                stackSection.style.transition = 'opacity 0.5s ease-in-out';
+            }, 50);
+        } else {
+            // Ocultar con animación
+            stackSection.style.opacity = 0;
             stackSection.style.transition = 'opacity 0.5s ease-in-out';
-        }, 100);
-        
-        // Scroll suave
-        stackSection.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                stackSection.style.display = 'none';
+            }, 500);
+        }
     });
 });
