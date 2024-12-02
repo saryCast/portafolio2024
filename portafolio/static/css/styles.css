@@ -149,7 +149,7 @@ body {
 
 .stack-list li {
     margin: 5px 0;
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     font-weight: 500;
     transition: color 0.2s ease;
 }

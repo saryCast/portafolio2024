@@ -18,7 +18,7 @@
                     <div class="about-section" id="aboutSection" style="display: none; opacity: 0;">
                         <div class="about-content">
                             <div class="about-text">
-                                <h3>Hola, no soy un robot.</h3>
+                                <h3 class="name">Hola, no soy un robot.</h3><br>
                                 <p>Soy SARA CASTILLO, apasionada del Desarrollo de Software y en constante aprendizaje.
                                     En este portafolio encontrarás mis proyectos y las tecnologías que utilizo.
                                     ¡Explóralo y descubre más sobre mi trabajo!</p>
@@ -52,7 +52,7 @@
                         <div class="stack-cards">
                             {% for stack in stacks %}
                             <div class="stack-category">
-                                <h4 class="category-title">DESARROLLO WEB</h4>
+                                <h4 class="category-title"><strong>DESARROLLO WEB</strong></h4>
                                 <div class="stack-card">
                                     <ul class="stack-list">
                                         {% for item in stack.desarrollo_web %}
@@ -63,18 +63,18 @@
                             </div>
 
                             <div class="stack-category">
-                                <h4 class="category-title">DESARROLLO DE SOFTWARE</h4>
+                                <h4 class="category-title"><strong>DESARROLLO DE SOFTWARE</strong></h4>
                                 <div class="stack-card">
                                     <ul class="stack-list">
                                         {% for item in stack.desarrollo_software %}
                                         <li>{{ item }}</li>
                                         {% endfor %}
-                                    </ul>
+                                    </ul><br>
                                 </div>
                             </div>
 
                             <div class="stack-category">
-                                <h4 class="category-title">BASE DE DATOS</h4>
+                                <h4 class="category-title"><strong>BASE DE DATOS</strong></h4>
                                 <div class="stack-card">
                                     <ul class="stack-list">
                                         {% for item in stack.base_datos %}
@@ -85,13 +85,13 @@
                             </div>
 
                             <div class="stack-category">
-                                <h4 class="category-title">OTROS</h4>
+                                <h4 class="category-title"><strong>OTROS</strong></h4>
                                 <div class="stack-card">
                                     <ul class="stack-list">
                                         {% for item in stack.otros %}
                                         <li>{{ item }}</li>
                                         {% endfor %}
-                                    </ul>
+                                    </ul><br>
                                 </div>
                             </div>
                             {% endfor %}
