@@ -61,3 +61,14 @@ window.addEventListener('resize', () => {
         }
     });
 });
+
+//efectos para el carrousel
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggleCarousel');
+    const carousel = document.getElementById('proyectosCarousel');
+
+    toggleButton.addEventListener('click', () => {
+        const isHidden = carousel.style.display === 'none';
+        carousel.style.display = isHidden ? 'block' : 'none';
+    });
+});

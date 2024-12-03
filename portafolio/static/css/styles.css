@@ -3,9 +3,12 @@ body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #2e2d2d, #0f0f0f);
+ /*   background: linear-gradient(to right, #2e2d2d, #0f0f0f);*/
     color: #fff;
     overflow-x: hidden;
+
+    background-image: url("banner-tecnologia.avif");
+    width: 100%;
 }
 
 /* Container principal */
@@ -273,4 +276,45 @@ body {
         width: 100%;
         margin: 0;
     }
+}
+
+
+/*estilos para el carrousel*/
+.carousel-inner .card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
 }

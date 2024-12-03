@@ -12,7 +12,7 @@
 <body>
     <div class="container-fluid ">
         <div class="sections-container">
-            <div class="row"></div>
+            <div class="row">
                 <!-- About Section -->
                 <div class="col-lg-4 col-md-4 p-3">
                     <div class="about-section" id="aboutSection" style="display: none; opacity: 0;">
@@ -101,6 +101,40 @@
             </div>
         </div>
     </div>
+    <!--CONTENEDOR PARA CARROUSEL-->
+    <div class="container text-center mt-5">
+        <button id="toggleCarousel" class="btn btn-primary">Proyectos</button>
+    
+        <!-- Carrusel -->
+        <div id="proyectosCarousel" class="carousel slide mt-4" data-bs-ride="carousel" style="display: none;">
+            <div class="carousel-inner">
+                {% for proyecto in proyectos %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="card mx-auto" style="width: 18rem; position: relative;">
+                        <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ proyecto.titulo }}</h5>
+                            <p class="card-text">{{ proyecto.descripcion }}</p>
+                        </div>
+                        <div class="overlay">
+                            <p>Tecnologías usadas: {{ proyecto.tecnologias }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    
+            <button class="carousel-control-prev" type="button" data-bs-target="#proyectosCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#proyectosCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+    
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="{% static 'js/script.js' %} "></script>
     </body>

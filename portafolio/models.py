@@ -7,3 +7,12 @@ class StackTecnologico(models.Model):
 
     def __str__(self):
         return f"Stack Tecnológico (ID: {self.id})"
+    
+class Proyecto(models.Model):
+    titulo = models.CharField(max_length=200)
+    descripcion = models.TextField()
+    tecnologias = models.TextField()
+    imagen = models.ImageField(upload_to='proyectos/')
+
+    def __str__(self):
+        return self.titulo
